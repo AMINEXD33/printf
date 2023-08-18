@@ -1,7 +1,6 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
-//DYNAMIC__ARRAY
+/*DYNAMIC__ARRAY*/
 /**
  *re_allocate-make space and copy a new value to the BUFFER 
  *Description:if the new string that needs to be added to the BUFFER is over flowing , meaning there is

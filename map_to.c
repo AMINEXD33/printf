@@ -1,30 +1,37 @@
 #include "main.h"
-#include <stdio.h>
+#include <stdarg.h>
+#include <stddef.h>
+
 /*
  *mapper-map eatch specifier to it's handling function
  *@str: string
  *@x: the current index in which '%' is found
  *Return: 0 if the handling function is found
  */
-int mapper(char *str, int x)
+int mapper(const char *str, int x, va_list ptr, struct D_array *BUFF)
 {
     for (x; str[x]!= ' ' && str[x] != '%' && str[x] != '\0';x++)
     {
-        if (str[x] == 'd')
+        if (str[x] == 'c')
         {
-            printf("printing an int\n");
+            char tmp[0];
+            int char_;
+            char_ = va_arg(ptr, int);
+            tmp[0] = char_;
+            array_push(BUFF,tmp);
+            return(1);
         }
-        else if(str[x] == 'c')
+        else if(str[x] == 's')
         {
-            printf("printing a char\n");
+            array_push(BUFF, va_arg(ptr, char*));
+            return(1);
         }
         else if(str[x] == '.')
         {
             if (is_digit(str[x+1]) == 0)
             {
-                printf("is digit->%c\n", (str[x+1]));
+
             }
-            printf("presision of %c\n", str[x + 1]);
         }
 
     }

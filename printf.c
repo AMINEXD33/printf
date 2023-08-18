@@ -1,7 +1,8 @@
 #include <stdarg.h>
 #include <stdlib.h>
-#include <stdio.h>/*REMOVE------------------------------------------<*/
 #include "main.h"
+#include <string.h>
+#include <unistd.h>
 int _printf(const char *input,...)
 {
     va_list ptr;/*variadic VAR*/
@@ -22,12 +23,22 @@ int _printf(const char *input,...)
     {
         if (input[x] == '%')
         {
-            mapper(input, (x+1));
+            int val;
+            /*depending on whiche specifer jump val chars ahead*/
+            val = mapper(input, (x+1), ptr, &BUFF);
+            x = x + val;
         }
         else
         {
+            /*if not a specifer just push it to BUFFER*/
             tmp[0] = input[x];
-            array_push(&BUFF, tmp);
+            if (array_push(&BUFF, tmp) == 1)
+            {
+                x++;
+            }
         }
     }
+    write(STDOUT_FILENO, BUFF.arr, BUFF.length);
+    free(BUFF.arr);
+    
 }
