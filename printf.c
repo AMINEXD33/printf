@@ -1,27 +1,23 @@
 #include <stdarg.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
-void _printf(char *input,...)
+int _printf(char *input,...)
 {
-    char *currentchar;
-    va_list ptr;
-    int start ,flag1;
-    int end ,fla2;
-    struct D_array BUFF;
+    va_list ptr;/*variadic VAR*/
+    struct D_array BUFF;/*initialize BUFFER*/
 
-    currentchar = malloc(sizeof(char) * 2);
-    BUFF.arr = (char*)malloc(sizeof(char) * 6);
+
+    va_start(ptr, input);
+
+    /*initialize MAIN BUFFER*/
+    BUFF.arr = (char*)malloc(sizeof(char) * len(input));
+    /*initialize the length of BUFFER*/
     BUFF.length = 6;
+    /*initialize thestarting point*/
     BUFF.index = 0;
-    // Initializing argument to the
-    // list pointer
-    //va_start(ptr, input);
-    //printf("%s\n",input);
 
-    //for (int x = 0; x <= 2; x++)
-      //  printf("%d\n",va_arg(ptr, int));
-    
+
+ 
     for (int x = 0; input[x] != '\0'; x++){
         if (input[x] == '%')
         {
@@ -35,5 +31,4 @@ void _printf(char *input,...)
         }
         
     }
-    printf("%s\n", BUFF.arr);
 }
