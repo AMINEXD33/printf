@@ -5,16 +5,16 @@
 #include <unistd.h>
 /**
  *_printf- a function that prints to stdout ,respecting specifiers
- *struct D_array-BUFFER struct
  *@input: initial strig passed to the _printf
  *Return: the lenght of the BUFFER
  */
 int _printf(const char *input, ...)
 {
+	int x;
 	va_list ptr;/*variadic VAR*/
-	struct D_array BUFF;/*initialize BUFFER*/
 	int length = len(input);
-	char tmp[0];
+	char tmp[2];
+	D_array BUFF;
 
 	va_start(ptr, input);
 	/*initialize MAIN BUFFER*/
@@ -25,19 +25,20 @@ int _printf(const char *input, ...)
 	BUFF.index = 0;
 
 
-	for (int x = 0; input[x] != '\0'; x++)
+	for (x = 0; input[x] != '\0'; x++)
 	{
 		if (input[x] == '%')
-	{
-		int val;
-		/*depending on whiche specifer jump val chars ahead*/
-		val = mapper(input, (x + 1), ptr, &BUFF);
-		x = x + val;
-	}
+		{
+			int val;
+
+			val = mapper(input, (x + 1), ptr, &BUFF);
+			x = x + val;
+		}
 		else
 		{
 			/*if not a specifer just push it to BUFFER*/
 			tmp[0] = input[x];
+			tmp[1] = '\0';
 			if (array_push(&BUFF, tmp) == 1)
 			{
 				x++;

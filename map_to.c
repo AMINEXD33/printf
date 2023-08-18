@@ -10,14 +10,16 @@
  */
 int mapper(const char *str, int x, va_list ptr, struct D_array *BUFF)
 {
-    for (x; str[x]!= ' ' && str[x] != '%' && str[x] != '\0';x++)
+    for (; str[x]!= ' ' && str[x] != '%' && str[x] != '\0';x++)
     {
         if (str[x] == 'c')
         {
-            char tmp[0];
+            char tmp[2];
             int char_;
+
             char_ = va_arg(ptr, int);
             tmp[0] = char_;
+            tmp[1] = '\0';
             array_push(BUFF,tmp);
             return(1);
         }
