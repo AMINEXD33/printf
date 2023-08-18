@@ -4,18 +4,22 @@
 /*dynamic_array.c*/
 #include <stdarg.h>
 #include <stddef.h>
+
 /**
  * struct D_array - Represents a buffer for _printf function.
  * @arr: Pointer to the character array (buffer).
  * @length: Length of the buffer.
  * @index: Current index within the buffer.
  */
-struct D_array
+typedef struct D_array
 {
 	int length; /* length of the allocated array */
 	int index; /* the last index written into */
 	char *arr; /* array or (BUFFER) */
-};
+} D_array;
+
+
+
 
 int _printf(const char *format, ...);
 int re_allocte(struct D_array *BUFF, int st_len, char *str);
