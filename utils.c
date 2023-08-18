@@ -1,5 +1,5 @@
 #include "main.h"
-int len (char *str)
+int len (const char *str)
 {
     int x;
     

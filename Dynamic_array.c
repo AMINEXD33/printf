@@ -79,7 +79,8 @@ int array_push(struct D_array *BUFF,char *str)
             BUFF->arr[x] = str[y];
             y++;
             BUFF->index+=1;
-        }        
+        }
+        //BUFF->arr[x] = '\0';        
         
     }
     return(0);
