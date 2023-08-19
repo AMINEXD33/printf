@@ -22,8 +22,6 @@ int _printf(const char *input, ...)
 	BUFF.length = length;
 	/*initialize thestarting point*/
 	BUFF.index = 0;
-
-
 	for (x = 0; input[x] != '\0'; x++)
 	{
 		if (input[x] == '%')
@@ -39,12 +37,13 @@ int _printf(const char *input, ...)
 			tmp[0] = input[x];
 			tmp[1] = '\0';
 			if (array_push(&BUFF, tmp) == 1)
-			{
 				x++;
-			}
 		}
 	}
 	write(STDOUT_FILENO, BUFF.arr, BUFF.length);
+	BUFF.length = len(BUFF.arr) - 1;
+	for (x = 0; x < BUFF.length; x++)
+		BUFF.arr[x] = '\0';
 	free(BUFF.arr);
 	return (BUFF.length);
 }

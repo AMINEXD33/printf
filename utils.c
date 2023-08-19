@@ -13,6 +13,7 @@ int len(const char *str)
 	{
 		x++;
 	}
+	x++;
 	return (x);
 }
 /**
