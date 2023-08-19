@@ -1,7 +1,6 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include "main.h"
-#include <string.h>
 #include <unistd.h>
 /**
  *_printf- a function that prints to stdout ,respecting specifiers
