@@ -3,7 +3,6 @@
 
 /*dynamic_array.c*/
 #include <stdarg.h>
-#include <stddef.h>
 
 /**
  * struct D_array - Represents a buffer for _printf function.
