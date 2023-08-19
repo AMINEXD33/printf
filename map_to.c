@@ -10,7 +10,7 @@
  */
 int mapper(const char *str, int x, va_list ptr, struct D_array *BUFF)
 {
-    for (; str[x]!= ' ' && str[x] != '%' && str[x] != '\0';x++)
+    for (; str[x]!= ' ' && str[x] != '\0';x++)
     {
         if (str[x] == 'c')
         {
@@ -28,14 +28,14 @@ int mapper(const char *str, int x, va_list ptr, struct D_array *BUFF)
             array_push(BUFF, va_arg(ptr, char*));
             return(1);
         }
-        else if(str[x] == '.')
+        else if(str[x] == '%')
         {
-            if (is_digit(str[x+1]) == 0)
-            {
-
-            }
+            char tmp[2];
+            tmp[0] = '%';
+            tmp[1] = '\0';
+            array_push(BUFF,tmp);
+            return(1);
         }
-
     }
     return(0);
 }
