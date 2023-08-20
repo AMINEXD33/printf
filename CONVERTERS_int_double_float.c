@@ -6,7 +6,7 @@ char *_stringfy_long_double(long double x, int presision)
     int SIZE1 = (int) x;
     int BUFF_SIZE = 0;
     char *BUFF;
-    int id;
+    int id, i, digit,divisor,num;
 
     while (SIZE1 > 0)
     {
@@ -17,17 +17,17 @@ char *_stringfy_long_double(long double x, int presision)
     BUFF_SIZE += 2;		/*add 1 bite for the "." and 1 bite for '\0' */
     BUFF = malloc (sizeof (char) * (BUFF_SIZE + presision));
     /*add the int to the BUFF */
-    int num = (int)x;
+    num = (int)x;
     BUFF_SIZE -= 2;
     id = 0;
     while (BUFF_SIZE > 0)
     {
-        int divisor = 1;
-        for (int i = 1; i < BUFF_SIZE; i++)
+        divisor = 1;
+        for (i = 1; i < BUFF_SIZE; i++)
 	    {
 	       divisor *= 10;
 	    }
-        int digit = num / divisor;
+        digit = num / divisor;
         BUFF[id] = (digit + '0');
         num %= divisor;
         BUFF_SIZE--;
@@ -55,7 +55,7 @@ char *_stringfy_double(double x, int presision)
     int SIZE1 = (int) x;
     int BUFF_SIZE = 0;
     char *BUFF;
-    int id;
+    int id,num,i,digit;
 
     while (SIZE1 > 0)
     {
@@ -66,17 +66,17 @@ char *_stringfy_double(double x, int presision)
     BUFF_SIZE += 2;		/*add 1 bite for the "." and 1 bite for '\0' */
     BUFF = malloc (sizeof (char) * (BUFF_SIZE + presision));
     /*add the int to the BUFF */
-    int num = (int)x;
+    num = (int)x;
     BUFF_SIZE -= 2;
     id = 0;
     while (BUFF_SIZE > 0)
     {
          int divisor = 1;
-        for (int i = 1; i < BUFF_SIZE; i++)
+        for (i = 1; i < BUFF_SIZE; i++)
 	{
 	    divisor *= 10;
 	}
-        int digit = num / divisor;
+        digit = num / divisor;
         BUFF[id] = (digit + '0');
         num %= divisor;
         BUFF_SIZE--;
@@ -104,7 +104,7 @@ char *_stringfy_float(float x, int presision)
     int SIZE1 = (int) x;
     int BUFF_SIZE = 0;
     char *BUFF;
-    int id;
+    int id, num, i, digit,divisor;
 
     while (SIZE1 > 0)
     {
@@ -115,17 +115,17 @@ char *_stringfy_float(float x, int presision)
     BUFF_SIZE += 2;		/*add 1 bite for the "." and 1 bite for '\0' */
     BUFF = malloc (sizeof (char) * (BUFF_SIZE + presision));
     /*add the int to the BUFF */
-    int num = (int)x;
+    num = (int)x;
     BUFF_SIZE -= 2;
     id = 0;
     while (BUFF_SIZE > 0)
     {
-         int divisor = 1;
-        for (int i = 1; i < BUFF_SIZE; i++)
+        divisor = 1;
+        for (i = 1; i < BUFF_SIZE; i++)
 	{
 	    divisor *= 10;
 	}
-        int digit = num / divisor;
+        digit = num / divisor;
         BUFF[id] = (digit + '0');
         num %= divisor;
         BUFF_SIZE--;
@@ -152,7 +152,8 @@ void _stringfy_int(int x,struct D_array *BUFF_)
     int num_length;
     int SIZE1, BUFF_SIZE;
     int flag_is_negative;
-    char *BUFF, id, i, digit;
+    char *BUFF;
+    int id, i, digit;
 
     if (x == 0)
         array_push(BUFF_, "0");

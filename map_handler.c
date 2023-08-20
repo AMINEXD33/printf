@@ -24,7 +24,7 @@ int int_printer(struct D_array *BUFF,va_list ptr)
 	_stringfy_int(x,BUFF);
 	return(1);
 }
-int pers(struct D_array *BUFF,va_list ptr)
+int pers(struct D_array *BUFF)
 {
 	array_push(BUFF, "%");
 	return(1);
