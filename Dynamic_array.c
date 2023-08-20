@@ -10,7 +10,6 @@
 *wanted string and copythe old BUFFER to the new one will also add a marging of
 *(1024 bits), to save up time , and call write as little as possible.
  *@BUFF: is the structure of the current BUFF
- *@st_len: is the length of the string that will be added to the buffer
  *@str: is the string that will be added to the BUFFER
  *Return:0 if success, 1 if malloc failed
  */
@@ -57,7 +56,7 @@ int re_allocate(struct D_array *BUFF, char *str)
 *hand if not , the function will pass so allocating and copying ,
 *SEE (re_allocate) above
  *@BUFF: the BUFFER struct
- *@str:the string that will be pushed to BUFFER
+ *@str:string
  *Return: 0 if success, exit(1) if re_alloc function failed
 */
 int array_push(struct D_array *BUFF, char *str)
@@ -69,7 +68,7 @@ int array_push(struct D_array *BUFF, char *str)
 	st_len = len(str);/*not including '\0'*/
 	if ((BUFF->index + st_len) > BUFF->length)
 	{
-		if (re_allocate(BUFF,str) == 1)
+		if (re_allocate(BUFF, str) == 1)
 		{
 			exit(1);
 		}
