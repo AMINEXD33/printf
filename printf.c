@@ -15,13 +15,13 @@ int _printf(const char *input, ...)
 	char tmp[2];
 	D_array BUFF;
 
-	if (!input || !BUFF || (input[0] == '%' && !input[1]))
-		return (-1);
-	if (!input[0])
-		return (0);
 	va_start(ptr, input);
 	/*initialize MAIN BUFFER*/
 	BUFF.arr = (char *)malloc(sizeof(char) * length);
+	if (input == NULL || BUFF.arr == NULL || (input[0] == '%' && !input[1]))
+		return (-1);
+	if (!input[0])
+		return (0);
 	/*initialize the length of BUFFER*/
 	BUFF.length = length;
 	/*initialize thestarting point*/
