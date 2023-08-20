@@ -15,6 +15,10 @@ int _printf(const char *input, ...)
 	char tmp[2];
 	D_array BUFF;
 
+	if (!input || !BUFF || (input[0] == '%' && !input[1]))
+		return (-1);
+	if (!input[0])
+		return (0);
 	va_start(ptr, input);
 	/*initialize MAIN BUFFER*/
 	BUFF.arr = (char *)malloc(sizeof(char) * length);
@@ -23,7 +27,7 @@ int _printf(const char *input, ...)
 	/*initialize thestarting point*/
 	BUFF.index = 0;
 	BUFF.length_of_string = 0;
-	for (x = 0; input != NULL && input[x] != '\0'; x++)
+	for (x = 0;input[x] != '\0'; x++)
 	{
 		if (input[x] == '%')
 		{
