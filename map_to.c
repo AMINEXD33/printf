@@ -15,6 +15,7 @@
 int mapper(const char *str, int x, va_list ptr, struct D_array *BUFF)
 {
 	int i;
+	int flag;
 	handler Handler[] = {
 		{'c', char_printer},
 		{'s', string_printrt},
@@ -24,18 +25,23 @@ int mapper(const char *str, int x, va_list ptr, struct D_array *BUFF)
 	for (; str[x] != ' ' && str[x] != '\0'; x++)
 	{
 		i = 0;
+		flag = 0;
 		while (i < 4)
 		{
 			if (str[x] == Handler[i].letter)
 			{
 				return (Handler[i].handler(BUFF, ptr));
+				flag = 1;/*a handling function is fund*/
 			}
 			else if (str[x] == '%')
 			{
 				return (pers(BUFF));
+				flag = 1;/*a handling function is fund*/
 			}
 			i++;
 		}
+		if (flag == 0)
+			exit(-1);
 	}
 	return (0);
 }
