@@ -11,7 +11,7 @@ int _printf(const char *input, ...)
 {
 	int x;
 	va_list ptr;/*variadic VAR*/
-	int length = len(input);
+	int length = 1000;/*a 1024 buffer*/
 	char tmp[2];
 	D_array BUFF;
 
@@ -22,6 +22,7 @@ int _printf(const char *input, ...)
 	BUFF.length = length;
 	/*initialize thestarting point*/
 	BUFF.index = 0;
+	BUFF.length_of_string = 0;
 	for (x = 0; input[x] != '\0'; x++)
 	{
 		if (input[x] == '%')
@@ -29,7 +30,7 @@ int _printf(const char *input, ...)
 			int val;
 
 			val = mapper(input, (x + 1), ptr, &BUFF);
-			x = x + val;
+			x = x + val;/*how many char to jump*/
 		}
 		else
 		{
@@ -40,10 +41,7 @@ int _printf(const char *input, ...)
 				x++;
 		}
 	}
-	write(STDOUT_FILENO, BUFF.arr, BUFF.length);
-	BUFF.length = len(BUFF.arr) - 1;
-	for (x = 0; x < BUFF.length; x++)
-		BUFF.arr[x] = '\0';
+	write(STDOUT_FILENO, BUFF.arr, BUFF.length_of_string);
 	free(BUFF.arr);
-	return (BUFF.length);
+	return (BUFF.length_of_string);
 }

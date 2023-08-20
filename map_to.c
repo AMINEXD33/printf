@@ -36,6 +36,7 @@ int mapper(const char *str, int x, va_list ptr, struct D_array *BUFF)
             array_push(BUFF,tmp);
             return(1);
         }
+
     }
     return(0);
 }

@@ -3,6 +3,7 @@
 
 /*dynamic_array.c*/
 #include <stdarg.h>
+#include <stddef.h>
 
 /**
  * struct D_array - Represents a buffer for _printf function.
@@ -13,6 +14,7 @@
 typedef struct D_array
 {
 	int length; /* length of the allocated array */
+	int length_of_string;/*only the length of the str inside the buff*/
 	int index; /* the last index written into */
 	char *arr; /* array or (BUFFER) */
 } D_array;
@@ -21,8 +23,8 @@ typedef struct D_array
 
 
 int _printf(const char *format, ...);
-int re_allocte(struct D_array *BUFF, int st_len, char *str);
-int array_push(struct D_array *BUFF, char *str);
+int re_allocte(struct D_array *BUFF,char *str);
+int array_push(struct D_array *BUFF,char *str);
 int len(const char *str);
 int is_digit(char x);
 int mapper(const char *str, int x, va_list ptr, struct D_array *BUFF);
