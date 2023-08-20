@@ -32,3 +32,20 @@ int is_digit(char x)
 		return (1);
 	}
 }
+/**
+ *size_of_int-gets the length of the string representation of a number 
+ *@x: number
+ *Return: the length of the int
+ */
+int size_of_int(int x)
+{
+    int BUFF_SIZE;
+
+    BUFF_SIZE = 0;
+    while (x > 0)
+    {
+        BUFF_SIZE++;
+        x /= 10;
+    }
+    return (BUFF_SIZE);
+}

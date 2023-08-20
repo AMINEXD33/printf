@@ -34,10 +34,9 @@ int _printf(const char *input, ...)
 		}
 		else
 		{
-			/*if not a specifer just push it to BUFFER*/
 			tmp[0] = input[x];
 			tmp[1] = '\0';
-			if (array_push(&BUFF, tmp) == 1)
+			if (array_push(&BUFF, tmp) == 1)/*if not a specifer just push it to BUFFER*/
 				x++;
 		}
 	}
