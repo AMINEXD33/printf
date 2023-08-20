@@ -19,6 +19,7 @@ int mapper(const char *str, int x, va_list ptr, struct D_array *BUFF)
 		{'c', char_printer},
 		{'s', string_printrt},
 		{'d', int_printer},
+		{'i', int_printer},
 	};
 	for (; str[x] != ' ' && str[x] != '\0'; x++)
 	{
