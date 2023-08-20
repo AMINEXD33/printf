@@ -23,7 +23,7 @@ int _printf(const char *input, ...)
 	/*initialize thestarting point*/
 	BUFF.index = 0;
 	BUFF.length_of_string = 0;
-	for (x = 0; input[x] != '\0'; x++)
+	for (x = 0; input != NULL && input[x] != '\0'; x++)
 	{
 		if (input[x] == '%')
 		{
