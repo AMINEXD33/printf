@@ -45,5 +45,5 @@ int char_printer(struct D_array *BUFF, va_list ptr);
 int string_printrt(struct D_array *BUFF, va_list ptr);
 int int_printer(struct D_array *BUFF, va_list ptr);
 void _stringfy_int_octal(int x /**, struct D_array *BUFF**/);
-int pers(struct D_array *BUFF, va_list ptr);
+int pers(struct D_array *BUFF);
 #endif /*__PRINTF_H*/
