@@ -42,7 +42,7 @@ int int_printer(struct D_array *BUFF, va_list ptr)
 	int x;
 
 	if (x < (-2147483647 - 1) || x > 2147483647)/*if int is over the limits*/
-		exit(-1);
+		_exit_proto(BUFF);/*free and exit*/
 	x = va_arg(ptr, int);
 	_stringfy_int(x, BUFF);
 	return (1);

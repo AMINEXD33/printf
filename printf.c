@@ -19,7 +19,10 @@ int _printf(const char *input, ...)
 	/*initialize MAIN BUFFER*/
 	BUFF.arr = (char *)malloc(sizeof(char) * length);
 	if (!input || BUFF.arr == NULL || (input[0] == '%' && !input[1]))
+	{
+		_exit_proto(&BUFF);/*free and exit*/
 		return (-1);
+	}
 	if (!input[0])
 		return (0);
 	/*initialize the length of BUFFER*/
@@ -46,5 +49,6 @@ int _printf(const char *input, ...)
 	}
 	write(STDOUT_FILENO, BUFF.arr, BUFF.length_of_string);
 	free(BUFF.arr);
+	va_end(ptr);
 	return (BUFF.length_of_string);
 }

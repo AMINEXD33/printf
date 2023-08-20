@@ -22,26 +22,29 @@ int mapper(const char *str, int x, va_list ptr, struct D_array *BUFF)
 		{'d', int_printer},
 		{'i', int_printer},
 	};
+	flag = 0;
 	for (; str[x] != ' ' && str[x] != '\0'; x++)
 	{
 		i = 0;
-		flag = 0;
+		flag = 1;
 		while (i < 4)
 		{
 			if (str[x] == Handler[i].letter)
 			{
 				return (Handler[i].handler(BUFF, ptr));
-				flag = 1;/*a handling function is fund*/
+				flag = 2;/*a handling function is fund*/
 			}
 			else if (str[x] == '%')
 			{
 				return (pers(BUFF));
-				flag = 1;/*a handling function is fund*/
+				flag = 2;/*a handling function is fund*/
 			}
 			i++;
 		}
-		if (flag == 0)
-			exit(-1);
+		if (flag == 1)
+			_exit_proto(BUFF);/*free and exit*/
 	}
+	if (flag == 0)
+		_exit_proto(BUFF);/*free and exit*/
 	return (0);
 }
