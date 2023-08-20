@@ -28,8 +28,7 @@ int _printf(const char *input, ...)
 	/*initialize the length of BUFFER*/
 	BUFF.length = length;
 	/*initialize thestarting point*/
-	BUFF.index = 0;
-	BUFF.length_of_string = 0;
+	BUFF.index = 0, BUFF.length_of_string = 0;
 	for (x = 0; input[x] != '\0';  x++)
 	{
 		if (input[x] == '%')
@@ -48,5 +47,6 @@ int _printf(const char *input, ...)
 		}
 	}
 	write(STDOUT_FILENO, BUFF.arr, BUFF.length_of_string), free(BUFF.arr);
-	va_end(ptr), return (BUFF.length_of_string);
+	va_end(ptr);
+	return (BUFF.length_of_string);
 }
