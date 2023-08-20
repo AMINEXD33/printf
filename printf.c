@@ -11,7 +11,7 @@ int _printf(const char *input, ...)
 {
 	int x;
 	va_list ptr;/*variadic VAR*/
-	int length = 1000;/*a 1024 buffer*/
+	int length = 1024;/*a 1024 buffer*/
 	char tmp[2];
 	D_array BUFF;
 
@@ -27,7 +27,7 @@ int _printf(const char *input, ...)
 	/*initialize thestarting point*/
 	BUFF.index = 0;
 	BUFF.length_of_string = 0;
-	for (x = 0;input[x] != '\0'; x++)
+	for (x = 0; input[x] != '\0';  x++)
 	{
 		if (input[x] == '%')
 		{

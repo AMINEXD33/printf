@@ -29,7 +29,7 @@ int mapper(const char *str, int x, va_list ptr, struct D_array *BUFF)
 			{
 				return (Handler[i].handler(BUFF, ptr));
 			}
-			else if(str[x] == '%')
+			else if (str[x] == '%')
 			{
 				return (pers(BUFF));
 			}

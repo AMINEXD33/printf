@@ -29,7 +29,6 @@ typedef struct handler
 	int (*handler)(struct D_array *, va_list);
 } handler;
 
-
 int _printf(const char *format, ...);
 int re_allocte(struct D_array *BUFF, char *str);
 int array_push(struct D_array *BUFF, char *str);
