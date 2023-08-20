@@ -1,6 +1,5 @@
 #ifndef __PRINTF_H
 #define __PRINTF_H
-
 /*dynamic_array.c*/
 #include <stdarg.h>
 #include <stddef.h>
@@ -19,11 +18,15 @@ typedef struct D_array
 	int index; /* the last index written into */
 	char *arr; /* array or (BUFFER) */
 } D_array;
-
+/**
+ *struct handler - struct that maps a char to a function
+ *@letter: a char
+ *@handler: the function
+ */
 typedef struct handler
 {
 	char letter;
-	int (*handler)(struct D_array *,va_list);
+	int (*handler)(struct D_array *, va_list);
 } handler;
 
 
@@ -36,11 +39,11 @@ int mapper(const char *str, int x, va_list ptr, struct D_array *BUFF);
 char *_stringfy_long_double(long double x, int presision);
 char *_stringfy_double(double x, int presision);
 char *_stringfy_float(float x, int presision);
-void _stringfy_int(int x,struct D_array *BUFF);
+void _stringfy_int(int x, struct D_array *BUFF);
 int size_of_int(int x);
-int char_printer(struct D_array *BUFF,va_list ptr );
-int string_printrt(struct D_array *BUFF,va_list ptr );
-int int_printer(struct D_array *BUFF,va_list ptr);
+int char_printer(struct D_array *BUFF, va_list ptr);
+int string_printrt(struct D_array *BUFF, va_list ptr);
+int int_printer(struct D_array *BUFF, va_list ptr);
 void _stringfy_int_octal(int x /**, struct D_array *BUFF**/);
-int pers(struct D_array *BUFF,va_list ptr);
+int pers(struct D_array *BUFF, va_list ptr);
 #endif /*__PRINTF_H*/
