@@ -1,6 +1,9 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stddef.h>
+#include <stdlib.h>
+#include <unistd.h>
+
 
 /*
  *mapper-map eatch specifier to it's handling function
@@ -36,7 +39,12 @@ int mapper(const char *str, int x, va_list ptr, struct D_array *BUFF)
             array_push(BUFF,tmp);
             return(1);
         }
-
+        else
+        {
+            const char *error_message = "Error: wrong specifier.\n";
+            write(STDERR_FILENO, error_message, len(error_message));
+            exit(99);
+        }
     }
     return(0);
 }
