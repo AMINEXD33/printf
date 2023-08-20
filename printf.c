@@ -18,7 +18,7 @@ int _printf(const char *input, ...)
 	va_start(ptr, input);
 	/*initialize MAIN BUFFER*/
 	BUFF.arr = (char *)malloc(sizeof(char) * length);
-	if (input == NULL || BUFF.arr == NULL || (input[0] == '%' && input[1] != '\0'))
+	if (!input || BUFF.arr == NULL || (input[0] == '%' && !input[1]))
 		return (-1);
 	if (!input[0])
 		return (0);
