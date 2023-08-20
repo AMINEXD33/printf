@@ -22,7 +22,7 @@ char *_stringfy_long_double(long double x, int presision)
 	BUFF_SIZE += 2;		/*add 1 bite for the "." and 1 bite for '\0' */
 	BUFF = malloc(sizeof(char) * (BUFF_SIZE + presision));
 	if (BUFF == NULL)
-		exit(-1);
+		charBUFF_exit_proto(BUFF);/*free and exit*/
 	/*add the int to the BUFF */
 	num = (int)x;
 	BUFF_SIZE -= 2;
@@ -71,7 +71,7 @@ char *_stringfy_double(double x, int presision)
 	BUFF_SIZE += 2;		/*add 1 bite for the "." and 1 bite for '\0' */
 	BUFF = malloc(sizeof(char) * (BUFF_SIZE + presision));
 	if (BUFF == NULL)
-		exit(-1);
+		charBUFF_exit_proto(BUFF);/*free and exit*/
 	/*add the int to the BUFF */
 	num = (int)x;
 	BUFF_SIZE -= 2;
@@ -119,7 +119,7 @@ char *_stringfy_float(float x, int presision)
 	BUFF_SIZE += 2;		/*add 1 bite for the "." and 1 bite for '\0' */
 	BUFF = malloc(sizeof(char) * (BUFF_SIZE + presision));
 	if (BUFF == NULL)
-		exit(-1);
+		charBUFF_exit_proto(BUFF);/*free and exit*/
 	/*add the int to the BUFF */
 	num = (int)x;
 	BUFF_SIZE -= 2;
@@ -174,7 +174,7 @@ void _stringfy_int(int x, struct D_array *BUFF_)
 	BUFF_SIZE += 1;/*add 1 bit for '\0' */
 	BUFF = malloc(sizeof(char) * (BUFF_SIZE));/*allocate buffer*/
 	if (BUFF == NULL)
-		exit(-1);
+		charBUFF_exit_proto(BUFF);/*free and exit*/
 	if (flag_is_negative == 1)
 	{
 		BUFF[id] = '-';

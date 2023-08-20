@@ -47,8 +47,6 @@ int _printf(const char *input, ...)
 				x++;
 		}
 	}
-	write(STDOUT_FILENO, BUFF.arr, BUFF.length_of_string);
-	free(BUFF.arr);
-	va_end(ptr);
-	return (BUFF.length_of_string);
+	write(STDOUT_FILENO, BUFF.arr, BUFF.length_of_string), free(BUFF.arr);
+	va_end(ptr), return (BUFF.length_of_string);
 }

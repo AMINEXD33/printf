@@ -27,7 +27,7 @@ int re_allocate(struct D_array *BUFF, char *str)
 	/*allocate the new buffer and handle malloc if it failed*/
 	re_allocated_arr = (char *) malloc(sizeof(char) * (new_length));
 	if (re_allocated_arr == NULL)
-		exit(-1);
+		_exit_proto(BUFF);/*free and exit*/
 	/*copy to new allocated memory*/
 	for (x = 0; BUFF->arr[x] != '\0';  x++)
 	{
@@ -72,7 +72,7 @@ int array_push(struct D_array *BUFF, char *str)
 	{
 		if (re_allocate(BUFF, str) == 1)
 		{
-			exit(1);
+			_exit_proto(BUFF);/*free and exit*/
 		}
 	}
 	else
