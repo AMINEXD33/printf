@@ -1,5 +1,7 @@
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
+
 /*DYNAMIC__ARRAY*/
 
 /**
@@ -25,7 +27,7 @@ int re_allocate(struct D_array *BUFF, char *str)
 	/*allocate the new buffer and handle malloc if it failed*/
 	re_allocated_arr = (char *) malloc(sizeof(char) * (new_length));
 	if (re_allocated_arr == NULL)
-		return (1);
+		exit(-1);
 	/*copy to new allocated memory*/
 	for (x = 0; BUFF->arr[x] != '\0';  x++)
 	{
