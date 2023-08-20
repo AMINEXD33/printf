@@ -1,5 +1,6 @@
 #include "main.h"
-
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
  *char_printer- takes care of pushing a char to the main BUFF
@@ -39,7 +40,8 @@ int string_printrt(struct D_array *BUFF, va_list ptr)
 int int_printer(struct D_array *BUFF, va_list ptr)
 {
 	int x;
-
+	if (x < (-2147483647 - 1) || x > 2147483647)
+		exit(-1);
 	x = va_arg(ptr, int);
 	_stringfy_int(x, BUFF);
 	return (1);
