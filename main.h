@@ -14,6 +14,7 @@
 #define F_PLUS 2
 #define F_ZERO 4
 #define F_HASH 8
+#define F_SPACE 16
 
 /**
  * struct D_array - Represents a buffer for _printf function.
