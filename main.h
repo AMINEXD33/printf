@@ -9,6 +9,9 @@
 #define UNUSED(x) (void)(x)
 #define BUFF_SIZE 1024
 
+/* FLAGS */
+#define F_MINUS 1
+
 /**
  * struct D_array - Represents a buffer for _printf function.
  * @arr: Pointer to the character array (buffer).
