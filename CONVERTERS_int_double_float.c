@@ -230,7 +230,7 @@ void _toBinary(unsigned int n, struct D_array *BUFF_)
 	size = (33  -  i);
 	result = malloc(sizeof(char) * (size + 1));/**1 is for the null**/
 	if (result == NULL)
-		_exit_proto(BUFF_);/*free and exit*/
+		charBUFF_exit_proto(binary);/*free and exit*/
 	for (tracker = 0; tracker < size ; tracker++)
 	{
 		result[tracker] = binary[(i + tracker)];

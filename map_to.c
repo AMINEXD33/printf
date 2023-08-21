@@ -22,13 +22,17 @@ int mapper(const char *str, int x, va_list ptr, struct D_array *BUFF)
 		{'d', int_printer},
 		{'i', int_printer},
 		{'b', binary_printer},
+		{'u', unsigned_int_printer},
+		{'o', unsigned_int_to_octal_printer},
+		{'X', unsigned_int_to_hex_printer_A},
+		{'x', unsigned_int_to_hex_printer_a},
 	};
 	flag = 0;
 	for (; str[x] != ' ' && str[x] != '\0'; x++)
 	{
 		i = 0;
 		flag = 1;
-		while (i < 5)
+		while (i < 9)
 		{
 			if (str[x] == Handler[i].letter)
 			{

@@ -49,4 +49,21 @@ int size_of_int(int x)
 	}
 	return (BUFF_SIZE);
 }
+/**
+ *size_of_unsigned_int-gets the length of the string representation of a number
+ *@x: number
+ *Return: the length of the unsigned int
+ */
+int size_of_unsigned_int(unsigned int x)
+{
+	int BUFF_SIZE;
+
+	BUFF_SIZE = 0;
+	while (x > 0)
+	{
+		BUFF_SIZE++;
+		x /= 10;
+	}
+	return (BUFF_SIZE);
+}
 
