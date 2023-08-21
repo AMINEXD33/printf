@@ -16,6 +16,10 @@
 #define F_HASH 8
 #define F_SPACE 16
 
+/* SIZES */
+#define S_LONG 2
+
+
 /**
  * struct D_array - Represents a buffer for _printf function.
  * @arr: Pointer to the character array (buffer).
