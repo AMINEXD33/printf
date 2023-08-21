@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include <unistd.h>
 
+#define UNUSED(x) (void)(x)
+
 /**
  * struct D_array - Represents a buffer for _printf function.
  * @arr: Pointer to the character array (buffer).
