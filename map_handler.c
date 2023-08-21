@@ -5,7 +5,7 @@
 /**
  *char_printer- takes care of pushing a char to the main BUFF
  *@BUFF: main BUFFER struct
- *@ptr: variadic function
+ *@ptr: variadic variable
  *Return: a jump value
  */
 int char_printer(struct D_array *BUFF, va_list ptr)
@@ -20,7 +20,7 @@ int char_printer(struct D_array *BUFF, va_list ptr)
 /**
  *string_printrt- takes care of pushing a string to the main BUFF
  *@BUFF: main BUFFER struct
- *@ptr: variadic function
+ *@ptr: variadic variable
  *Return: a jump value
  */
 int string_printrt(struct D_array *BUFF, va_list ptr)
@@ -34,7 +34,7 @@ int string_printrt(struct D_array *BUFF, va_list ptr)
 /**
  *int_printer- takes care of pushing an int to the main BUFF
  *@BUFF: main BUFFER struct
- *@ptr: variadic function
+ *@ptr: variadic variable
  *Return: a jump value
  */
 int int_printer(struct D_array *BUFF, va_list ptr)
@@ -57,3 +57,18 @@ int pers(struct D_array *BUFF)
 	array_push(BUFF, "%");
 	return (1);
 }
+/**
+ * binary_printer- takes care of pushing a binary to the main BUFF
+ * @BUFF: main BUFFER struct
+ * @ptr: variadic variable
+ * Return: a jump value
+ */
+int binary_printer(struct D_array *BUFF, va_list ptr)
+{
+	unsigned int x;
+
+	x = va_arg(ptr, unsigned int);
+	_toBinary(x, BUFF);
+	return (1);
+}
+

@@ -196,3 +196,47 @@ void _stringfy_int(int x, struct D_array *BUFF_)
 	free(BUFF);
 }
 
+/**
+ * _toBinary- get a binary representation of a number as a string
+ * @n: number
+ * @BUFF_: the main BUFFER struct
+ * Return: the jump value
+ */
+void _toBinary(unsigned int n, struct D_array *BUFF_)
+{
+	int i, remainder, size, tracker;
+	char binary[33];
+	char *result;
+
+	if (n == 0)
+	{
+		array_push(BUFF_, "0");
+		return;
+	}
+	size = 0;
+	tracker = 0;
+	for (i = 32; i >= 0; i--)
+	{
+		remainder = n % 2;
+		n = n / 2;
+		binary[i] = remainder + '0';
+	}
+	binary[33] = '\0';
+	i = 0;
+	while (binary[i] != '1' && binary[i] != '\0')
+	{
+		i++;
+	}
+	size = (33  -  i);
+	result = malloc(sizeof(char) * (size + 1));/**1 is for the null**/
+	if (result == NULL)
+		_exit_proto(BUFF_);/*free and exit*/
+	for (tracker = 0; tracker < size ; tracker++)
+	{
+		result[tracker] = binary[(i + tracker)];
+	}
+	result[tracker] = '\0';
+	array_push(BUFF_, result);
+	free(result);
+}
+
