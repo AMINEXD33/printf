@@ -11,6 +11,7 @@
 
 /* FLAGS */
 #define F_MINUS 1
+#define F_PLUS 2
 
 /**
  * struct D_array - Represents a buffer for _printf function.
