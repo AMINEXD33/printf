@@ -12,8 +12,8 @@ The usage of the _printf() function is quite straightforward. This function requ
 | :-------- | :------- | :------------------------- |
 | `%c` | `char` | print a char |
 | `%s` | `string`| print a string|
-| `%d` | `char` | print a char |
-| `%i` | `float` | print a float |
+| `%d` | `int` | print a int |
+| `%i` | `octal` | print a octal |
 
 ## Examples
 ##### > string and char
