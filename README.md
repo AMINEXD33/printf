@@ -37,4 +37,7 @@ int main(void)
 
 #### output
 `test string c`
-`test int i`
+`test int i
+
+
+.`
