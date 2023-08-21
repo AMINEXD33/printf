@@ -12,7 +12,8 @@ The usage of the _printf() function is quite straightforward. This function requ
 | :-------- | :------- | :------------------------- |
 | `%c` | `char` | print a char |
 | `%s` | `string`| print a string|
-|`...` | `...`| in progress...|
+| `%d` | `char` | print a char |
+| `%i` | `float` | print a float |
 
 ## Examples
 ##### > string and char
@@ -20,7 +21,7 @@ The usage of the _printf() function is quite straightforward. This function requ
 #include "main.h"
 int main(void)
 {
-  _printf("test %s %c", "string", 'c');
+  _printf("test %s %c %d %i", "string", 'c');
   return(0);
 }
 ```
