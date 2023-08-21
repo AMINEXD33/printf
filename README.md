@@ -25,5 +25,17 @@ int main(void)
   return(0);
 }
 ```
+## Examples
+##### > int and octal
+```c
+#include "main.h"
+int main(void)
+{
+  _printf("test %d %i", "int", 'i');
+  return(0);
+}
+```
+
 #### output
 `test string c`
+`test int i`
