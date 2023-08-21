@@ -21,11 +21,10 @@ The usage of the _printf() function is quite straightforward. This function requ
 #include "main.h"
 int main(void)
 {
-  _printf("test %s %c %d %i", "string", 'c');
+  _printf("test %s %c", "string", 'c');
   return(0);
 }
 ```
-## Examples
 ##### > int and octal
 ```c
 #include "main.h"
