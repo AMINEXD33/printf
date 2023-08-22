@@ -54,7 +54,7 @@ int main(void)
 #include "main.h"
 int main(void)
 {
-	printf("Binary_of_unsigned_max : %b  |  Unsigned_int_max : %u" , 4294967295, 4294967295);
+	_printf("Binary_of_unsigned_max : %b  |  Unsigned_int_max : %u" , 4294967295, 4294967295);
 	return (0);
 }
 ```
