@@ -19,6 +19,15 @@ The usage of the _printf() function is quite straightforward. This function requ
 | `%x` | `unsigned int` | print as hex (lower case) |
 | `%X` | `unsigned int` | print as hex (upper case)  |
 | `%o` | `unsigned int` | print as octal  |
+| `%p` | `---` | ----  |
+| `%+` | `---` | ----  |
+| `%#` | `---` | ----  |
+| `%l` | `---` | ----  |
+| `%h` | `---` | ----  |
+| `%0` | `---` | ----  |
+| `%-` | `---` | ----  |
+| `%r` | `---` | ----  |
+| `%R` | `---` | ----  |
 | ... | ... | in progress  |
 
 
