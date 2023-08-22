@@ -7,7 +7,7 @@
  *@x: number
  *@BUFF_: is the main BUFF struct
  */
-void _stringfy_unsigned_long_int_hex(unsigned long int x
+void _stringfy_unsigned_long_int_hex(intptr_t x
 , struct D_array *BUFF_)
 {
 	int index = 0;
