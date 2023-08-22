@@ -90,8 +90,8 @@ int main(void)
 
 # Behind the scenes
 ### How Does this printf Implementation Work?
-####Let's delve into the inner workings of the _printf() function and its core component: the main buffer.
-#### The _printf() function employs a dynamic array called the buffer, initially set to a default size of 1024. This buffer expands dynamically as needed to accommodate new values. This design proves to be more efficient than direct writes to the standard output. Rather than writing to the standard output each time the buffer is full, data is accumulated in the buffer until the end of the process. This accumulation minimizes the number of write() calls to just one.
+#### Let's delve into the inner workings of the _printf() function and its core component: the main buffer.
+##### The _printf() function employs a dynamic array called the buffer, initially set to a default size of 1024. This buffer expands dynamically as needed to accommodate new values. This design proves to be more efficient than direct writes to the standard output. Rather than writing to the standard output each time the buffer is full, data is accumulated in the buffer until the end of the process. This accumulation minimizes the number of write() calls to just one.
 
 ##### 1-Dynamic Array Buffer: _printf() utilizes a dynamically allocated array to store the data to be printed. This array is referred to as the buffer. Its initial size is 1024 bytes, but it dynamically grows as more data is added to it.
 
