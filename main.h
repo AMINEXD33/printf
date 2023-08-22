@@ -79,4 +79,5 @@ void _stringfy_non_printable_chars(int n, struct D_array *BUFF_);
 void _stringfy_unsigned_long_int_hex(intptr_t x
 , struct D_array *BUFF_);
 int address_printer(struct D_array *BUFF, va_list ptr);
+int reverse_string_printer(struct D_array *BUFF, va_list ptr);
 #endif /*__PRINTF_H*/

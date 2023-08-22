@@ -18,3 +18,27 @@ int address_printer(struct D_array *BUFF, va_list ptr)
 
 	return (1);
 }
+/**
+ * reverse_string_printer-takes care of printing a vstring in reverse
+ * @BUFF: main Buffer structure
+ * @ptr: variadic variable
+ * Return:jump value
+ */
+int reverse_string_printer(struct D_array *BUFF, va_list ptr)
+{
+	char *str;
+	int len_;
+	char tmp[2];
+
+	str = va_arg(ptr, char *);
+	len_ = len(str);
+
+	while (len_ >= 0)
+	{
+		tmp[0] = str[len_];
+		tmp[1] = '\0';
+		array_push(BUFF, tmp);
+		len_--;
+	}
+	return (1);
+}
