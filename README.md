@@ -87,4 +87,12 @@ int main(void)
 
 #### output
 `octal: 37777777777`
-`
+
+# Behind the scenes
+### How Does this printf Implementation Work?
+####Let's delve into the inner workings of the _printf() function and its core component: the main buffer.
+#### The _printf() function employs a dynamic array called the buffer, initially set to a default size of 1024. This buffer expands dynamically as needed to accommodate new values. This design proves to be more efficient than direct writes to the standard output. Rather than writing to the standard output each time the buffer is full, data is accumulated in the buffer until the end of the process. This accumulation minimizes the number of write() calls to just one.
+
+
+
+![FINALDYNAMIC drawio](https://github.com/AMINEXD33/printf/assets/136008817/f3a934c6-3c67-44c3-896d-e9d15a4bf98e)
