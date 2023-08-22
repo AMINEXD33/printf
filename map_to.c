@@ -26,8 +26,8 @@ int mapper(const char *str, int x, va_list ptr, struct D_array *BUFF)
 		{'o', unsigned_int_to_octal_printer},
 		{'X', unsigned_int_to_hex_printer_A},
 		{'x', unsigned_int_to_hex_printer_a},
-		{'S', unprintble_chars_printer},
-		{'p', address_printer}, {'r', reverse_string_printer},
+		{'S', unprintble_chars_printer}, {'R', rot13_string_printer},
+		 {'p', address_printer}, {'r', reverse_string_printer},
 	};
 	flag = 0;
 	for (; str[x] != ' ' && str[x] != '\0'; x++)

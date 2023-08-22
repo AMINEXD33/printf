@@ -42,3 +42,18 @@ int reverse_string_printer(struct D_array *BUFF, va_list ptr)
 	}
 	return (1);
 }
+/**
+ * rot13_string_printer-takes care of printing the rot 13 of a string
+ * @BUFF: main Buffer structure
+ * @ptr: variadic variable
+ * Return:jump value
+ */
+int rot13_string_printer(struct D_array *BUFF, va_list ptr)
+{
+	char *string;
+
+
+	string = va_arg(ptr, char *);
+	rot_13(string, BUFF);
+	return (1);
+}

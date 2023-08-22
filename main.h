@@ -80,4 +80,6 @@ void _stringfy_unsigned_long_int_hex(intptr_t x
 , struct D_array *BUFF_);
 int address_printer(struct D_array *BUFF, va_list ptr);
 int reverse_string_printer(struct D_array *BUFF, va_list ptr);
+int rot13_string_printer(struct D_array *BUFF, va_list ptr);
+void rot_13(char *x, struct D_array *BUFF_);
 #endif /*__PRINTF_H*/

@@ -32,3 +32,45 @@ void _stringfy_non_printable_chars(int n, struct D_array *BUFF_)
 		array_push(BUFF_, tmp);
 	}
 }
+/**
+ * rot_13- printf the rot13 of a string
+ * @x: string
+ * @BUFF_: main BUFFER structure
+ */
+void rot_13(char *x, struct D_array *BUFF_)
+{
+	char UPPER_rot_13_alpha[] = {'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+	'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
+	'L', 'M'};
+	char LOWER_rot_13_alpha[] = {'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
+	'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+	'l', 'm'};
+	int i;
+	int I;
+	char tmp[2];
+
+	i = 0;
+	while (x[i] != '\0')
+	{
+		I = (int)x[i];
+		if (I >= 65 && I <= 90)
+		{
+			tmp[0] = (char)UPPER_rot_13_alpha[(I - 65)];
+			tmp[1] = '\0';
+			array_push(BUFF_, tmp);
+		}
+		else if (I >= 97 && I <= 122)
+		{
+			tmp[0] = (char)LOWER_rot_13_alpha[(I - 97)];
+			tmp[1] = '\0';
+			array_push(BUFF_, tmp);
+		}
+		else
+		{
+			tmp[0] = x[i];
+			tmp[1] = '\0';
+			array_push(BUFF_, tmp);
+		}
+		i++;
+	}
+}
