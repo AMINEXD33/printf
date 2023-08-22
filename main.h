@@ -74,4 +74,6 @@ void _stringfy_unsigned_int_hex_A(unsigned int x, struct D_array *BUFF_);
 int unsigned_int_to_hex_printer_A(struct D_array *BUFF, va_list ptr);
 int unsigned_int_to_hex_printer_a(struct D_array *BUFF, va_list ptr);
 void _stringfy_unsigned_int_hex_a(unsigned int x, struct D_array *BUFF_);
+int unprintble_chars_printer(struct D_array *BUFF, va_list ptr);
+void _stringfy_non_printable_chars(int n, struct D_array *BUFF_);
 #endif /*__PRINTF_H*/

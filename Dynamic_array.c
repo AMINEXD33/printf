@@ -10,7 +10,7 @@
 *flowing , meaning there is
 *no space for it , this function will reallocate a new BUFFER that can hold the
 *wanted string and copythe old BUFFER to the new one will also add a marging of
-*(1024 bits), to save up time , and call write as little as possible.
+*(100 bits), to save up time , and call write as little as possible.
  *@BUFF: is the structure of the current BUFF
  *@str: is the string that will be added to the BUFFER
  *Return:0 if success, 1 if malloc failed
@@ -23,7 +23,7 @@ int re_allocate(struct D_array *BUFF, char *str)
 	char *re_allocated_arr;
 
 	/*calc length of the new BUFFER*/
-	new_length = (BUFF->length) + 1024;
+	new_length = (BUFF->length) + len(str) + 100;
 	/*allocate the new buffer and handle malloc if it failed*/
 	re_allocated_arr = (char *) malloc(sizeof(char) * (new_length));
 	if (re_allocated_arr == NULL)
