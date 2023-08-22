@@ -10,11 +10,11 @@
  */
 int address_printer(struct D_array *BUFF, va_list ptr)
 {
-	intptr_t address;
+	intptr_t **address;
 
-	address = va_arg(ptr, intptr_t);
+	address = va_arg(ptr, void *);
 	array_push(BUFF, "0x");
-	_stringfy_unsigned_long_int_hex((intptr_t)&address, BUFF);
+	_stringfy_unsigned_long_int_hex((intptr_t)&(address), BUFF);
 
 	return (1);
 }
