@@ -19,16 +19,9 @@ The usage of the _printf() function is quite straightforward. This function requ
 | `%x` | `unsigned int` | print as hex (lower case) |
 | `%X` | `unsigned int` | print as hex (upper case)  |
 | `%o` | `unsigned int` | print as octal  |
-| `%p` | `---` | ----  |
-| `%+` | `---` | ----  |
-| `%#` | `---` | ----  |
-| `%l` | `---` | ----  |
-| `%h` | `---` | ----  |
-| `%0` | `---` | ----  |
-| `%-` | `---` | ----  |
-| `%r` | `---` | ----  |
-| `%R` | `---` | ----  |
-| ... | ... | in progress  |
+| `%p` | `long unsigned int` | print an adress  |
+| `%r` | `string` | print a reverced string  |
+| `%R` | `string` | print string as ROT13  |
 
 
 ## Examples
@@ -96,6 +89,8 @@ int main(void)
 
 #### output
 `octal: 37777777777`
+
+.. same thing applies for the rest of the specifiers.
 
 # Behind the scenes
 ### How Does this printf Implementation Work?
